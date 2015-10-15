@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<project name="ExtendedBooleanPlugin" default="all" basedir=".">
+
+	<target name="all" depends="clean,compile,jar" />
+	
+	<!-- Change the properties below according to your needs -->
+	<property name="extpkgname" value="ExtendedBooleanPlugin" />
+	<property name="packagebase" value="com/ibm/mycustomeditors" />
+	<property name="pluginclass" value="com.ibm.mycustomeditors.ExtendedBooleanPlugin" />
+	<property name="bootstrapjs" value="${extpkgname}.js" />
+	<property name="compressedbootstrapjs" value="${bootstrapjs}.gjz" />
+	
+	<!-- Properties below are supposed to be generated -->
+	<property name="webcontentbase" value="${packagebase}/WebContent" />
+	<property name="buildoutput" value="${basedir}/build" />
+	<property name="buildtemp" value="${buildoutput}/temp" />
+	<property name="compiledbin" value="${buildtemp}/bin" />
+	<property name="compiledwebcontent" value="${buildtemp}/webcontent" />
+	<property name="icmregistry" value="ICMRegistry" />
+
+	<!-- Generic code to build an extensions package -->
+	<path id="classpath">
+		<fileset dir="lib" >
+			<include name="*.jar" />
+		</fileset>
+		<file name="C:\IBM\SDP\plugins\navigatorAPI.jar" />
+	</path>
+
+	<target name="clean">
+		<delete dir="${buildoutput}" />
+	</target>
+
+	<target name="compile">
+		<mkdir dir="${buildoutput}"/>
+		<mkdir dir="${buildtemp}"/>
+		<mkdir dir="${compiledbin}"/>
+		<mkdir dir="${compiledwebcontent}"/>
+
+		<javac srcdir="src" destdir="${compiledbin}" source="1.6" target="1.6" debug="true" includeantruntime="false">
+			<classpath refid="classpath" />
+			<include name="**/*.java" />
+		</javac>
+
+		<copy todir="${compiledwebcontent}" >
+			<fileset dir="src">
+				<include name="${webcontentbase}/**" />
+				<exclude name="**/.*ignore" />
+			</fileset>
+		</copy>
+		<gzip src="${basedir}/src/${webcontentbase}/${bootstrapjs}" destfile="${compiledwebcontent}/${webcontentbase}/${bootstrapjs}.jgz"/>
+	</target>
+
+	<target name="jar">
+		<jar jarfile="${buildoutput}/${extpkgname}.jar" >
+			<fileset dir="${compiledbin}" includes="**/*" />
+			<fileset dir="${compiledwebcontent}" includes="**/*" />
+			<manifest>
+				<attribute name="Plugin-Class" value="${pluginclass}" />
+				<section name="build">
+					<attribute name="Built-By" value="${user.name}" />
+					<attribute name="Build" value="${TODAY}" />
+				</section>
+			</manifest>
+		</jar>
+
+		<zip destfile="${buildoutput}/${extpkgname}.zip">
+			<zipfileset dir="${buildoutput}/">
+				<include name="${extpkgname}.jar"/>
+			</zipfileset>
+			<zipfileset dir="${basedir}">
+				<include name="${icmregistry}/**.*"/>
+			</zipfileset>
+		</zip>
+	</target>
+
+</project>

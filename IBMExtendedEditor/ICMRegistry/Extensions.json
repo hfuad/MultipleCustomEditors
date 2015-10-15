@@ -1,0 +1,36 @@
+{
+	"Name": "IBM Extended Editors",
+	"Description": "IBM Extended Editors",
+	"Locale": "",
+	"Version": "1.0.0",
+	"Extensions": [
+		{
+			"id": "IBM_ExtendedStringEditor2",
+			"title": "IBM Extended String Editor z",
+			"description": "desc string",
+			"type": "ViewDesignerExtensions",
+			"packages": {
+				"str": "/navigator/plugin/MergedEditorsPlugin/getResource/str"
+			},
+			"css": [
+				  "/navigator/plugin/MergedEditorsPlugin/getResource/str/resources/StringEditor.css"
+			],
+			"bootstrapModule": "str/Initializer",
+			"bootstrapMethod": "initialize"
+		},
+		{
+			"id": "IBM_ExtendedBoolean2",
+			"title": "IBM Extended Booelan z",
+			"description": "This is a simple sample custom editor",
+			"type": "ViewDesignerExtensions",
+			"packages": {
+				"ibm": "/navigator/plugin/MergedEditorsPlugin/getResource/ibm"
+			},
+			"css": [
+				  "/navigator/plugin/MergedEditorsPlugin/getResource/ibm/resources/ExtendedBooelan.css"
+			],
+			"bootstrapModule": "ibm/Initializer",
+			"bootstrapMethod": "initialize"
+		}
+	]
+}

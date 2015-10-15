@@ -1,0 +1,22 @@
+{
+	"Name": "IBM Extended String",
+	"Description": "A set of custom editors.",
+	"Locale": "",
+	"Version": "1.0.0",
+	"Extensions": [
+		{
+			"id": "IBM_ExtendedString",
+			"title": "IBM Extended String",
+			"description": "ExtendedString",
+			"type": "ViewDesignerExtensions",
+			"packages": {
+				"ibm": "/navigator/plugin/ExtendedStringPlugin/getResource/ibm"
+			},
+			"css": [
+				  "/navigator/plugin/ExtendedStringPlugin/getResource/ibm/resources/ExtenedString.css"
+			],
+			"bootstrapModule": "ibm/Initializer",
+			"bootstrapMethod": "initialize"
+		}
+	]
+}

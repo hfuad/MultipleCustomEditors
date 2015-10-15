@@ -1,0 +1,36 @@
+<div class="dijitInline dijitReset dijitLeft idxComposite">
+    <!-- Label and star indicator. Do not change this part. -->
+    <div class="idxLabel dijitInline dijitHidden" dojoAttachPoint="labelWrap">
+        <label dojoAttachPoint="compLabelNode"></label>
+    </div>
+    
+    <div class="dijitInline" dojoAttachPoint="fieldWrap">
+        <!-- Custom code goes in the div with stateNode and oneuiBaseNode attach point. -->
+        <div dojoAttachPoint="stateNode,oneuiBaseNode" class="dijit dijitReset dijitInline dijitLeft" role="presentation">
+        	<label>String Editor Extended</label>
+            <input data-dojo-type="dijit/form/TextBox" data-dojo-attach-point="textbox,focusNode" data-dojo-props="readOnly:true" style="width:180px">
+        </div>
+            <button data-dojo-type="dijit/form/Button" data-dojo-attach-point="selBtn">Select</button>
+
+        <!-- Error icon. Do not change this part. -->
+        <div class='dijitReset dijitInline dijitValidationContainer' dojoAttachPoint="iconNode">
+            <div class="dijitValidationIcon">
+                <input class="dijitReset dijitInputField dijitValidationInner" value="&#935; " type="text" tabIndex="-1" readonly="readonly" role="presentation"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dialog box -->
+    <div data-dojo-type="dijit/Dialog" data-dojo-attach-point="dlg" style="display:none;width:200px"
+            data-dojo-props="title:'Select Colors'">
+        <div class="dijitDialogPaneContent">
+            <input data-dojo-type="dijit/form/CheckBox" data-dojo-props="name:'cb1',value:'G'">Green<br>
+            <input data-dojo-type="dijit/form/CheckBox" data-dojo-props="name:'cb1',value:'Y'">Yellow<br>
+            <input data-dojo-type="dijit/form/CheckBox" data-dojo-props="name:'cb1',value:'R'">Red<br>
+        </div>
+        <div class="dijitDialogPaneActionBar">
+            <button data-dojo-type="dijit/form/Button" data-dojo-props="type:'submit'">OK</button>
+            <button data-dojo-type="dijit/form/Button" data-dojo-props="type:'button', onClick:function(){ this.getParent().onCancel(); }">Cancel</button>
+        </div>
+    </div>
+</div>

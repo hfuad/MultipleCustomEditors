@@ -1,0 +1,22 @@
+{
+	"Name": "Extended Boolean Editor",
+	"Description": "Extended Boolean Editor",
+	"Locale": "",
+	"Version": "1.0.0",
+	"Extensions": [
+		{
+			"id": "IBM_ExtendedBoolean",
+			"title": "IBM Extended Boolean",
+			"description": "This is a simple sample custom editor Boolean",
+			"type": "ViewDesignerExtensions",
+			"packages": {
+				"bln": "/navigator/plugin/ExtendedBooleanPlugin/getResource/bln"
+			},
+			"css": [
+				  "/navigator/plugin/ExtendedBooleanPlugin/getResource/bln/resources/ExtendedBoolean.css"
+			],
+			"bootstrapModule": "bln/Initializer",
+			"bootstrapMethod": "initialize"
+		}
+	]
+}
