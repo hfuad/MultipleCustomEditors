@@ -21,7 +21,7 @@ require([
 		}
 	]; // End of extension definitions.
 
-
+debugger;
 
 	// !!! DO NOT MODIFY THE CODE BELOW !!!
 	// Load the extension packages

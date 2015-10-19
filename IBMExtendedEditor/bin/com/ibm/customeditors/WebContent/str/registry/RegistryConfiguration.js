@@ -1,22 +1,34 @@
 define([
 	"dojo/_base/declare",
-	"str/StringEditor"
-], function(declare, StringEditor) {
-
+	"str/StringEditor",
+	"ibm/ExtendedBooelan"
+], function(declare, StringEditor,ExtendedBoolean) {
+debugger;
 	return {
 		editors: {
 			editorConfigs: {
-				"StringEditor2": {
+				"bln": {
+					label: "IBM Extended Booelan",
+					editorClass: ExtendedBooelan
+				},
+				"str": {
 					label: "IBM Extended String Editor",
 					editorClass: StringEditor
 				}
 			},
 			mappings: {
 				types: {
+					"boolean": {
+						single: {
+							editorConfigs: [
+								"bln"
+							]
+						}
+					},
 					"string": {
 						single: {
 							editorConfigs: [
-								"StringEditor2"
+								"str"
 							]
 						}
 					}

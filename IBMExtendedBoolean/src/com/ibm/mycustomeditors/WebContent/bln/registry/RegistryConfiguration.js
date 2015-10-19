@@ -2,7 +2,7 @@ define([
 	"dojo/_base/declare",
 	"bln/ExtendedBoolean"
 ], function(declare, ExtendedBoolean) {
-
+debugger;
 	return {
 		editors: {
 			editorConfigs: {

@@ -7,27 +7,20 @@ require([
 	"dojo/Deferred"
 ], function(lang, array, domConstruct, sniff, all, Deferred) {
 
+	debugger;
 	var extensions = [
 		{
 			packages:
 			{
-				"str": "/navigator/plugin/MergedEditorsPlugin/getResource/str"
-			},
-			css: [
-				  "/navigator/plugin/MergedEditorsPlugin/getResource/str/resources/StringEditor.css"
-			],
-			bootstrapModule: "str/Initializer",
-			bootstrapMethod: "initialize"
-		},
-		{
-			packages: {
+				"str": "/navigator/plugin/MergedEditorsPlugin/getResource/str",
 				"ibm": "/navigator/plugin/MergedEditorsPlugin/getResource/ibm"
 			},
 			css: [
-				  "/navigator/plugin/MergedEditorsPlugin/getResource/ibm/resources/ExtendedBooelan.css"
+			    "/navigator/plugin/MergedEditorsPlugin/getResource/str/resources/StringEditor.css",
+				"/navigator/plugin/MergedEditorsPlugin/getResource/ibm/resources/ExtendedBooelan.css"
 			],
-			"bootstrapModule": "ibm/Initializer",
-			"bootstrapMethod": "initialize"
+			bootstrapModule: "plugin/MergedEditorsPlugin/getResource/InitializerMerged",
+			bootstrapMethod: "initialize"
 		}
 	]; // End of extension definitions.
 
@@ -41,7 +34,7 @@ require([
 			// Set up the promise;
 			var deferred = new Deferred();
 			promises.push(deferred.promise);
-
+			debugger;
 			// Load the module packages.
 			require({
 				paths: extension.packages
@@ -49,6 +42,7 @@ require([
 
 			// Load the stylesheets.
 			array.forEach(extension.css, function(url) {
+				debugger;
 				if (sniff("ie")) {
 					document.createStyleSheet(url);
 				} else {
@@ -63,6 +57,7 @@ require([
 			// Call the bootstrap method.
 			if (extension.bootstrapModule && extension.bootstrapMethod) {
 				require([extension.bootstrapModule], function(bootstrapClass) {
+					debugger;
 					var bootstrap = new bootstrapClass();
 					if (lang.isFunction(bootstrap[extension.bootstrapMethod])) {
 						bootstrap[extension.bootstrapMethod]();

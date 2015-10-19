@@ -11,7 +11,7 @@ public class ExtendedStringPlugin extends Plugin {
 
 	@Override
 	public String getName(Locale arg0) {
-		return "IBM Case Manager Custom Editor plug-in";
+		return "IBM Case Manager Custom Editor plug-inString";
 	}
 
 	@Override

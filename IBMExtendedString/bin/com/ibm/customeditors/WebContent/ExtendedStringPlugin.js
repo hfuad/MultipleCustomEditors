@@ -6,7 +6,7 @@ require([
 	"dojo/promise/all",
 	"dojo/Deferred"
 ], function(lang, array, domConstruct, sniff, all, Deferred) {
-
+debugger;
 	var extensions = [
 		{
 			packages:
@@ -31,7 +31,7 @@ require([
 			// Set up the promise;
 			var deferred = new Deferred();
 			promises.push(deferred.promise);
-
+			debugger;
 			// Load the module packages.
 			require({
 				paths: extension.packages

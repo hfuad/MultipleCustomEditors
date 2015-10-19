@@ -2,7 +2,7 @@ define([
 	"dojo/_base/declare",
 	"ibm/ExtenedString"
 ], function(declare, ExtenedString) {
-
+debugger;
 	return {
 		editors: {
 			editorConfigs: {

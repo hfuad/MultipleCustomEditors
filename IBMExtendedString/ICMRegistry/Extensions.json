@@ -2,7 +2,7 @@
 	"Name": "IBM Extended String",
 	"Description": "A set of custom editors.",
 	"Locale": "",
-	"Version": "1.0.0",
+	"Version": "1.0.2",
 	"Extensions": [
 		{
 			"id": "IBM_ExtendedString",

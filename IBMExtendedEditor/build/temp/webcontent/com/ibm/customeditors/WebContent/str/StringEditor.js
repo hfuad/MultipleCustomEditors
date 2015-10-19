@@ -20,7 +20,7 @@ define([
 
 		templateString: template,
 		baseClass: "StringEditor",
-		oneuiBaseClass: "",
+		oneuiBaseClass: "StringEditor",
 
 		postCreate: function(){
 			aspect.after(this.selBtn, "onClick", lang.hitch(this, "onSel"));

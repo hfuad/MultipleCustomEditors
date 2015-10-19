@@ -16,11 +16,11 @@ define([
 	"pvr/widget/editors/mixins/_EditorMixin"
 ], function(aspect, declare, lang, _WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, template, Dialog, Button, CheckBox, TextBox, _CssStateMixin, _CompositeMixin, _ValidationMixin, _EditorMixin)
 {
-	return declare([_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, _CssStateMixin, _CompositeMixin, _ValidationMixin, _EditorMixin], {
+	return declare("com.ibm.ExtendedBooleanPlugin",[_WidgetBase, _TemplatedMixin, _WidgetsInTemplateMixin, _CssStateMixin, _CompositeMixin, _ValidationMixin, _EditorMixin], {
 
 		templateString: template,
 		baseClass: "ExtendedBooelan",
-		oneuiBaseClass: "",
+		oneuiBaseClass: "ExtendedBoolean",
 
 		postCreate: function(){
 			aspect.after(this.selBtn, "onClick", lang.hitch(this, "onSel"));

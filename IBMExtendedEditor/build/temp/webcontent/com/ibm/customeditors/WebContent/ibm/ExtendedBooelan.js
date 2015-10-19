@@ -20,7 +20,7 @@ define([
 
 		templateString: template,
 		baseClass: "ExtendedBooelan",
-		oneuiBaseClass: "",
+		oneuiBaseClass: "ExtendedBoolean",
 
 		postCreate: function(){
 			aspect.after(this.selBtn, "onClick", lang.hitch(this, "onSel"));
